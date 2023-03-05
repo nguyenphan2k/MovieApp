@@ -1,6 +1,7 @@
 import React from 'react'
 import DetailNavbar from './DetailNavbar'
 import DetailHero from './DetailHero'
+import DetailCast from './DetailCast'
 // import {useSelector} from 'react-redux'
 
 

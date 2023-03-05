@@ -7,8 +7,8 @@ function Banner() {
      const [close, setClose] = useState(true)
      return (
           <div className='max-w-[1640px] mx-auto mt-3'>
-               <div className='relative max-h-[400px]'>
-                    <img src={movie2} alt="movie2" className='w-full max-h-[300px]' />
+               <div className='relative max-h-[600px]'>
+                    <img src={movie2} alt="movie2" className='w-full h-[350px]' />
                     <div className='absolute top-0 flex flex-col'>
                          <div className='flex px-8 py-5 mt-3'>
                               <h2 className='text-2xl font-semibold text-white'>Latest Trailers</h2>
@@ -19,8 +19,16 @@ function Banner() {
                                    <p className='py-0.5 px-4 font-medium text-white'>In Threaters</p>
                               </div>
                          </div>
-                         <div className='px-8 grid md:grid-cols-4 gap-6 w-full'>
-                                   <video src={Trailer1} loop muted className='rounded hover:scale-100 w-[300px]'>
+                         <ul className='px-8 flex self-center justify-between gap-6 '>
+                              <li className='w-auto h-auto'>
+                                   <img src={movie2} alt='movie2' className='w-[300px] h-[200px]'/>
+                                   <div className='flex items-center flex-col mt-2'>
+                                        <h3 className='text-white font-semibold'>The Mandalorian</h3>
+                                        <p className='text-white font-light'>The Way</p>
+                                   </div>
+                              </li>
+                         
+                              {/* <video className='rounded hover:scale-100 w-[300px]'>
      
                                    </video>
                                    <video src={Trailer1} autoPlay loop muted className='rounded hover:scale-100 w-[300px]'>
@@ -31,10 +39,8 @@ function Banner() {
                                    </video>
                                    <video src={Trailer1} autoPlay loop muted className='rounded hover:scale-100 w-[300px]'>
      
-                                   </video>
-                              
-
-                         </div>
+                                   </video> */}
+                         </ul>
                     </div>
                     {/* {close ? <div className='bg-black/70 fixed w-full h-screen z-10 top-0 left-0'>
                          <div className='flex items-center justify-center w-full h-screen'>

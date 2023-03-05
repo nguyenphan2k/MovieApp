@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux'
 
 
 function Movie() {
-     const shows = useSelector((state) => state.allLists.lists)
-     const renderList = shows.results
-     console.log(renderList);
+     // const shows = useSelector((state) => state.allLists.lists)
+     // const renderList = shows.results
+     // console.log(renderList);
      return (
           <div className='max-w-[1640px] mx-auto px-3 py-4 mt-3 grid gap-6 md:grid-cols-8'>
                {/*Card*/}
