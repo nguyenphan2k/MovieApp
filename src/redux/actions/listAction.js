@@ -6,3 +6,9 @@ export const setLists = (lists) => {
           payload: lists
      }
 }  
+export const setSearch = (lists) => {
+     return {
+          type: ActionType.SET_SEARCH,
+          payload: lists
+     }
+}  

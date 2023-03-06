@@ -1,32 +1,32 @@
-import React from 'react'
+import React,{useState} from 'react'
 import movie1 from '../../assets/ghost.jpg'
 import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-
+import { useSelector, useDispatch } from 'react-redux'
 
 function Movie() {
-     // const shows = useSelector((state) => state.allLists.lists)
-     // const renderList = shows.results
-     // console.log(renderList);
+     const shows = useSelector((state) => state.allLists.lists)
+     // const [slideList, setSlideList] = useState([])
+     const renderList = shows
+     console.log(renderList);
      return (
-          <div className='max-w-[1640px] mx-auto px-3 py-4 mt-3 grid gap-6 md:grid-cols-8'>
+          <div className='max-w-[1640px] mx-auto px-3 py-4 mt-3 grid gap-6 md:grid-cols-8 sm:grid-cols-4'>
                {/*Card*/}
-               {/* {renderList.map((render) => (
-                    <div key={render.id}>
+               {renderList.map((render) => (
+                    <div key={render.id}>    
                          <div className='relative'>
                               <HiOutlineDotsCircleHorizontal
                                    className='absolute top-2 right-1 text-xl hover:bg-blue-500 
                                         rounded-full transition duration-200 bg-gray-300 text-black'
                               />
                               <div>
-                                   <>
+                                   <Link to='/detailmovie'>
                                         <img
                                              src={movie1}
                                              alt="movie1"
                                              className='w-[150px] rounded-lg'
                                         />
-                                   </>
+                                   </Link>
                               </div>
                          </div>
                          <div>
@@ -35,7 +35,7 @@ function Movie() {
                               <p className='text-[14px] text-gray-400'>{render.release_date}</p>
                          </div>
                     </div>
-               ))} */}
+               ))}
           </div>
      )
 }

@@ -7,20 +7,18 @@ import axios from 'axios'
 function Trending() {
      const [changeStatus, setChangeStatus] = useState('On TV')
      // const lists = useSelector((state) => state)
-     // const dipatch = useDispatch()
-     // const getApi = async () => {
-     //      const res = await axios
-     //           .get('https://api.themoviedb.org/4/list/1?page=1&api_key=01f0efd4e09d2f9ee03497080f858016')
-     //           .catch((err) => {
-     //                console.error(err)
-     //           });
-     //      dipatch(setLists(res.data))
-     // }
-     // // console.log(lists);
-     // useEffect(() => {
-     //      getApi()
-     // }, [])
-     // console.log("click", lists);
+     const dipatch = useDispatch()
+     const getApi = async () => {
+          await axios
+               .get('https://api.themoviedb.org/4/list/1?page=1&api_key=01f0efd4e09d2f9ee03497080f858016')
+               .then(data => dipatch(setLists(data.data.results)))
+               .catch((err) => {
+                    console.error(err)
+               });
+     }
+     useEffect(() => {
+          getApi()
+     }, [])
      return (
           <div className='max-w-[1640px] mx-auto px-8 py-4 mt-3'>
                <div className='flex items-center'>

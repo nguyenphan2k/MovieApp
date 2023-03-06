@@ -1,29 +1,30 @@
-import React from 'react'
-import img from '../../assets/main.jpg'
+import React,{useState} from 'react'
+import {useSelector} from 'react-redux'
+import SearchInput from './SearchInput'
+import SearchButton from './SearchButton'
 
 function Hero() {
+  const [name, setName] = useState()
+  // console.log(name);
+  const display = useSelector((state) => state.allLists.lists)
+  const renderList = display
+  console.log(renderList);
+  const handleSearch = (e) => {
+    setName(e.target.value)
+  }
   return (
-    <div className='max-w-[1640px] mx-auto'>
-      <div className='max-h-[400px] relative'>
-        {/*Banner*/}
-        <div className='absolute w-full h-full text-white max-h-[300px]
-        flex flex-col justify-center'>
-          <h2 className='px-8 text-[48px] font-bold'>Welcome.</h2>
-          <h3 className='px-8 text-[32px] font-medium mb-4'>
-            Millions of movies, TV shows and people to discover. Explore now.
-          </h3>
-          <div className='ml-8 mt-6 bg-white w-[95%] rounded-full flex items-center justify-between'>
-            <input
-              type="text"
-              placeholder='Search for a movie, tv show, person...'
-              className='bg-transparent outline-none focus:text-gray-400 py-2.5 px-5 w-full 
-              cursor-pointer text-gray-600'
-            />
-            <button className='text-white bg-green-300 rounded-full py-2.5 
-            px-[26px] font-bold hover:text-black transition duration-300'>Search</button>
+    <div className='h-[300px] bg-banner bg-cover py-5 mx-auto'>
+      <div className='flex flex-col gap-10 px-10 py-10'>
+          <div className='text-white'>
+            <h2 className='font-extrabold text-5xl'>Welcome.</h2>
+            <h3 className='font-semibold text-[2rem]'>Millions of movies, TV shows and people to discover. Explore now.</h3>
           </div>
-        </div>
-        <img src={img} alt="img" className='w-full h-[300px]'/>
+          <div className='relative'>
+              <SearchInput />
+              <div className='absolute top-0 right-0'>
+                  <SearchButton />
+              </div>
+          </div>
       </div>
     </div>
   )
