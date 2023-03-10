@@ -1,5 +1,3 @@
-import { AiOutlineSearch } from 'react-icons/ai'
-import { AiOutlineClose } from 'react-icons/ai'
 import TMDB from '../../assets/photo.svg'
 export const headerLeft = [
      {
@@ -35,13 +33,11 @@ export const headerRight = [
      },
      {
           name:'Login',
-          type: 'pass',
-          number: '1',
+          type: 'pass_login',
      },
      {
           name:'Join TMDB',
           type: 'pass',
-          number: '2',
      },
      {
           name:'search',

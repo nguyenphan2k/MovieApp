@@ -12,3 +12,9 @@ export const setSearch = (lists) => {
           payload: lists
      }
 }  
+export const setMovie = (lists) => {
+     return {
+          type: ActionType.SET_MOVIE,
+          payload: lists
+     }
+}  

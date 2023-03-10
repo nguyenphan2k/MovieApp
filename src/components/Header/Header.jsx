@@ -1,6 +1,4 @@
 import React from 'react'
-import { IoIosAddCircleOutline } from 'react-icons/io'
-import { Link } from 'react-router-dom'
 import HeaderList from './HeaderList'
 import {headerLeft, headerRight} from '../Header/HeaderItem'
 
